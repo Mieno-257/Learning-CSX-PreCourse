@@ -51,3 +51,63 @@ const personStore = {
   console.log(sandra.age); // -> Logs 26
   sandra.greet(); // -> Logs 'hello'
 
+/**=================Challenge 4: Introduce ============= */
+const personStore_c4 = {
+    greet: function() {
+      console.log('hello');
+    }
+  }
+
+  function personFromPersonStore_c4(name, age) {
+    const person = Object.create(personStore_c4);
+    person.name = name;
+    person.age = age;
+    return person;
+  }
+  
+  const sandra_c4 = personFromPersonStore_c4('Sandra', 26);
+  
+  // add code here
+  function introduce(){
+    console.log(`Hello, my name is ${this.name}`);
+  }
+
+  personStore_c4.introduce = introduce
+  
+  // Uncomment this line to check your work!
+   sandra_c4.introduce(); // -> Logs 'Hi, my name is Sandra'
+
+
+/*========Challenge 5: PersonConstructor ========== */
+function PersonConstructor() {
+	// add code here
+    this.greet = function(){
+        console.log('hello')
+    };
+}
+
+const simon = new PersonConstructor();
+
+// Uncomment this line to check your work!
+ simon.greet(); // -> Logs 'hello'
+
+
+/*========Challenge 6: personFromConstructor======= */
+function PersonConstructor_c6() {
+  this.greet = function() {
+    console.log('hello');
+  }
+}
+
+function personFromConstructor(name, age) {
+	// add code here
+
+
+}
+
+const mike = personFromConstructor('Mike', 30);
+
+// Uncomment these lines to check your work!
+// console.log(mike.name); // -> Logs 'Mike'
+// console.log(mike.age); // -> Logs 30
+// mike.greet(); // -> Logs 'hello'
