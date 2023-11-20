@@ -154,12 +154,23 @@ function PersonConstructor_c7() {
     5. create isCheck
     */
    function Inventory(item, price) {
+    const newInventory = {};
     // add code here
-     this[item] = {
+     newInventory[item] = {
         price: price,
         quantity: 1
     }
+    return newInventory
   }
+  /*Issue:
+  this[item]={
+    price: price,
+    quantity: 1
+  }
+  a. create a new object within the function
+  b. create a new object within the object
+  c. don't forget to return!
+  */
   
   const myInventory = new Inventory('cucumber', 2);
   console.log(myInventory)
